@@ -57,7 +57,10 @@ An Android application built with **Jetpack Compose** that displays a list of us
 
 ## 📸 Screenshots
 
-> _Add screenshots of the user list screen and user detail screen here._
+<img width="1080" height="2400" alt="Screenshot_20251016_171023" src="https://github.com/user-attachments/assets/ffbdd8cb-0ce5-4b51-aa02-eb3ed1af25e3" />
+
+<img width="1080" height="2400" alt="Screenshot_20251016_171132" src="https://github.com/user-attachments/assets/059b11f9-f6b3-4ef9-849d-84a22862fabb" />
+
 
 ---
 
