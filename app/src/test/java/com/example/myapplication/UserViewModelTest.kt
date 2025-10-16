@@ -25,7 +25,6 @@ class UserViewModelTest {
 
     private val testDispatcher = StandardTestDispatcher()
 
-
     @Before
     fun setup() {
         Dispatchers.setMain(testDispatcher)
@@ -46,7 +45,8 @@ class UserViewModelTest {
                 zip = "12345",
                 state = "California",
                 country = "USA",
-                phone = "+1-555-123-4567"
+                phone = "+1-555-123-4567",
+                photo="https://json-server.dev/ai-profiles/2.png"
             ),
             User(
                 id = 2,
@@ -58,7 +58,8 @@ class UserViewModelTest {
                 zip = "38194-0750",
                 state = "Pennsylvania",
                 country = "Seychelles",
-                phone = "1-497-506-6241 x4514"
+                phone = "1-497-506-6241 x4514",
+                photo="https://json-server.dev/ai-profiles/86.png"
             )
         )
 
@@ -68,12 +69,11 @@ class UserViewModelTest {
         testDispatcher.scheduler.advanceUntilIdle()
 
         assertEquals(false, viewModel.isLoading.value)
-        assertEquals(mockUsers, viewModel.users.value)
+        assertEquals(mockUsers, viewModel.usersList.value)
     }
 
     @Test
     fun `fetchUser should update user and isLoading`() = runTest {
-        // Arrange
         val mockUser =  User(
             id = 1,
             name = "Emily Johnson",
@@ -84,7 +84,8 @@ class UserViewModelTest {
             zip = "12345",
             state = "California",
             country = "USA",
-            phone = "+1-555-123-4567"
+            phone = "+1-555-123-4567",
+            photo="https://json-server.dev/ai-profiles/86.png"
         )
         `when`(getUsersUseCase.getUser(1)).thenReturn(mockUser)
 
@@ -93,7 +94,7 @@ class UserViewModelTest {
 
         // Assert
         assertEquals(false, viewModel.isLoading.value)
-        assertEquals(mockUser, viewModel.user.value)
+        assertEquals(mockUser, viewModel.userDetail.value)
     }
 
     @After

@@ -16,7 +16,8 @@ class FakeUserRepository : UserRepository {
                 zip = "12345",
                 state = "California",
                 country = "USA",
-                phone = "+1-555-123-4567"
+                phone = "+1-555-123-4567",
+                photo="https://json-server.dev/ai-profiles/86.png"
             )
         )
     }
@@ -32,7 +33,8 @@ class FakeUserRepository : UserRepository {
             zip = "12345",
             state = "California",
             country = "USA",
-            phone = "+1-555-123-4567"
+            phone = "+1-555-123-4567",
+            photo="https://json-server.dev/ai-profiles/86.png"
         )
 
     }

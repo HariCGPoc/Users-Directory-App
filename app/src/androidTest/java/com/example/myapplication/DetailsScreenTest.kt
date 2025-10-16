@@ -30,7 +30,7 @@ class DetailsScreenTest {
 
         // Wait for recomposition and data fetch
         composeTestRule.waitUntil(timeoutMillis = 5_000) {
-            viewModel.user.value != null
+            viewModel.userDetail.value != null
         }
 
         composeTestRule.onNodeWithText("Name").assertIsDisplayed()

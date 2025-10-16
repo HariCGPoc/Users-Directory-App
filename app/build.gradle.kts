@@ -98,11 +98,6 @@ dependencies {
     // Navigation
      implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
 
-
-   // Paging
-    implementation("androidx.paging:paging-runtime:3.1.1")
-    implementation("androidx.paging:paging-compose:1.0.0-alpha18")
-
     // Unit Testing
     testImplementation("junit:junit:4.13.2")
     api(libs.mockito.kotlin)
@@ -110,8 +105,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
     testImplementation ("org.mockito:mockito-inline:5.2.0")
 
-    implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
-
+    // Image Loader
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 

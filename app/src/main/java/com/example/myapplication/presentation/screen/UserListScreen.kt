@@ -28,12 +28,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.ImageLoader
 import coil.compose.AsyncImage
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.example.myapplication.R
 import com.example.myapplication.utils.ApplicationConstants
 import okhttp3.OkHttpClient
@@ -75,7 +75,7 @@ fun UserListScreen(navController: NavController, viewModel: UserViewModel = hilt
             LazyColumn(
                 contentPadding = paddingValues,
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxSize().testTag("users_list")
                     .background(Color(0xFFF5F5F5))
             ) {
                 items(users) { user ->
@@ -90,7 +90,6 @@ fun UserListScreen(navController: NavController, viewModel: UserViewModel = hilt
     }
 }
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun UserItem(user: User, onClick: () -> Unit) {
     Card(
